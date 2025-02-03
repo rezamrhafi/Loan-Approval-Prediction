@@ -1,18 +1,44 @@
-# Milestone-2
+# Loan Approval Prediction 💡
 
-## Objective
-saya adalah seorang data scientist di sebuah BANK, saya diminta untuk membuat sebuah model yang dapat memprediksi seseorang dapat menerima pinjaman sehingga orang yang ingin melakukan pengecekan apakah mereka dapat melakukan peminjaman atau tidak.
+Repositori ini berisi project prediksi konversi menggunakan beberapa model (KNN, SVM, Decision Tree, Random Forest, XGBoost) klasifikasi dengan base parameter, lalu model terbaik selanjutnya dilakukan hyperparameter tuning, hasilnya model ini menggunakan XGBoost sebagai model prediksi. Project ini bertujuan untuk menerapkan model machine learning untuk memprediksi konversi berdasarkan dataset yang tersedia. Repositori ini mencakup file Jupyter Notebook yang menjelaskan proses secara menyeluruh, mulai dari eksplorasi data hingga percobaan model menggunakan unseen data.
 
 ---
-## Conceptual Problems
-### Jelaskan latar belakang adanya bagging dan cara kerja bagging !
-Bagging adalah teknik ensemble yang dikembangkan untuk mengatasi masalah performa model prediktif, khususnya untuk model yang memiliki masalah overfitting (seperti Decision Tree) atau model yang kurang stabil. cara kerja dari bagging adalah melibatkan pelatihan beberapa model secara independen dan menggabungkan prediksi mereka melalui perataan atau pemungutan suara
+## Project Overview 📝
 
-### Jelaskan perbedaan cara kerja algoritma Random Forest dengan algoritma boosting yang Anda pilih !
-Random Forest adalah algoritma yang menggunakan metode bagging, di mana ia membuat banyak Decision Tree independen dari subset data yang dihasilkan melalui bootstrapping, dan hasil akhir diperoleh dengan voting mayoritas (untuk klasifikasi) dari semua pohon. Sedangkan XGBoost menggunakan pendekatan boosting, di mana ia membangun pohon secara berurutan. Setiap pohon baru mencoba memperbaiki kesalahan pohon sebelumnya dengan meminimalkan fungsi loss melalui pengoptimalan gradien.
+Dalam proyek ini, saya menggunakan beberapa model klasifikasi dengan base parameter, lalu model terbaik selanjutnya dilakukan hyperparameter tuning untuk menganalisis data dan membangun model prediksi konversi. Beberapa langkah utama yang dicakup dalam proyek ini adalah:
 
-### Jelaskan apa yang dimaksud dengan Cross Validation !
-Cross-validation adalah teknik evaluasi model yang digunakan untuk menilai kemampuan generalisasi suatu model terhadap data baru dengan cara membagi data menjadi beberapa subset. Proses ini bertujuan untuk mengurangi overfitting atau underfitting dan memastikan model memiliki performa yang konsisten.
+1. **Import Libraries dan Eksplorasi Data**:
+    - Memuat dataset dan melakukan eksplorasi awal untuk memahami struktur dan karakteristik data.
+
+2. **Preprocessing Data**:
+    - Melakukan pembersihan dan persiapan data, termasuk penanganan outlier dan imputasi nilai yang hilang.
+
+3. **Pengembangan Model**:
+    - Membangun dan melatih model lima model klasifikasi untuk memprediksi konversi.
+
+4. **Evaluasi Model**:
+    - Menggunakan metrik evaluasi untuk menilai kinerja model.
+
+5. **Hyperparameter Tuning**:
+   - Melakukan hyperparameter tuning menggunakan model terbaik.
+     
+7. **Evaluasi Model**:
+   - Melakukan evaluasi terhadap model yang sudah dituning
+     
+9. **Pengambilan Keputusan untuk Model dan Bisnis**:
+    - Mengambil keputusan terhadap model dan untuk bisnis
+
+---
+
+## Latar Belakang Masalah 🧐
+
+Dalam industri perbankan, pemberian pinjaman merupakan salah satu layanan utama yang berkontribusi terhadap profitabilitas dan pertumbuhan bisnis. Namun, proses penentuan kelayakan kredit bagi calon peminjam sering kali menjadi tantangan, terutama dalam mengurangi risiko kredit macet dan meningkatkan efisiensi operasional.
+
+Seiring dengan perkembangan teknologi dan pemanfaatan data dalam pengambilan keputusan, penggunaan model prediktif berbasis machine learning dapat membantu bank dalam menilai kemungkinan seorang calon peminjam mendapatkan persetujuan pinjaman. Model ini akan menganalisis berbagai variabel seperti riwayat kredit, penghasilan, pekerjaan, dan faktor lainnya untuk memberikan prediksi yang akurat mengenai kelayakan peminjam.
+
+Dengan adanya model prediktif ini, calon peminjam juga dapat melakukan pengecekan awal mengenai kemungkinan mereka mendapatkan pinjaman sebelum mengajukan permohonan resmi. Hal ini tidak hanya meningkatkan transparansi bagi nasabah tetapi juga membantu bank dalam mengoptimalkan proses persetujuan kredit, mengurangi risiko kredit macet, serta meningkatkan kepuasan pelanggan.
+
+Oleh karena itu, pengembangan model prediksi kelayakan pinjaman ini menjadi langkah strategis dalam meningkatkan efisiensi dan akurasi proses evaluasi kredit di bank.
 
 ---
 ## Dataset Description
@@ -36,3 +62,21 @@ Dataset ini berisi informasi demografis, keuangan, dan riwayat kredit individu. 
 | **loan_status**                   | Categorical   | Status persetujuan pinjaman (1 = Disetujui, 0 = Ditolak).                      |
 
 ---
+
+## Metode yang Digunakan 🛠️
+
+- Statistik Inferensial
+- Machine Learning
+- Visualisasi Data
+- Pemodelan Prediktif
+
+---
+
+## Kesimpulan Analisa 🧠
+- setelah membandingkan antara 5 model, model XGBoost memiliki performa yang baik dan stabil meskipun modelnya overfit ringan.
+- dengan melakukan hyperparameter tuning, model dapat meningkatkan performanya karena dapat menyesuaikan parameter yang dibutuhkan berdasarkan dataset.
+- dengan mengoptimalkan nilai f1-score, model dapat menghindari memprediksi disetujui tetapi tidak harusnya disetujui dan memprediksi tidak disetujui tetapi harusnya disetujui.
+- pendidikan dan kesehatan merupakan alasan paling tinggi untuk seseorang melakukan peminjaman.
+- rekomendasi 1 : peminjam jika ingin melakukan peminjaman, sebaiknya menyesuaikan jumlah yang ingin dipinjam dengan pemasukan pertahunnya.
+- rekomendasi 2 : dengan menggunakan model ini, peminjam dapat mengetahui apakah mereka layak untuk menerima pinjaman berdasarkan data yang mereka berikan.
+- rekomendasi 3 : peminjam sebaiknya tidak meminjam terlalu banyak apabila pernah gagal dalam pembayaran pinjaman sebelumnya.
