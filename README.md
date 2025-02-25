@@ -3,6 +3,11 @@
 This repository contains a project on conversion prediction using multiple classification models (KNN, SVM, Decision Tree, Random Forest, XGBoost) with base parameters. The best-performing model was then fine-tuned using hyperparameter tuning, resulting in XGBoost being selected as the final prediction model. This project aims to apply machine learning models to predict conversions based on the available dataset. The repository includes a Jupyter Notebook file explaining the entire process, from data exploration to model experimentation using unseen data.
 
 ---
+## **HuggingFace Link :**  
+[View Demo](https://huggingface.co/spaces/RezaMRhafi/Milestone_2)
+
+
+---
 ## Project Overview 📝
 
 In this project, I used multiple classification models with base parameters, followed by hyperparameter tuning on the best-performing model to analyze the data and build a conversion prediction model. The key steps covered in this project are:
